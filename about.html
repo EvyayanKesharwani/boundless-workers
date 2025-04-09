@@ -16,6 +16,7 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #f5f5f5, #ffffff);
+      scroll-behavior: smooth;
     }
 
     .sidebar {
@@ -53,30 +54,7 @@
 
     .main-content {
       margin-left: 240px;
-      padding: 60px 40px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .main-content h1 {
-      font-size: 48px;
-      color: #222;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    }
-
-    .main-content p {
-      font-size: 20px;
-      color: #444;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      font-weight: 600;
-      color: #000;
+      padding: 60px 40px 20px 40px;
     }
 
     .glass-box {
@@ -85,42 +63,67 @@
       padding: 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease;
     }
 
-    .shapes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
-    .shape {
-      position: absolute;
-      opacity: 0.1;
+    .glass-box h1 {
+      font-size: 48px;
+      color: #222;
+      margin-bottom: 20px;
     }
 
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 60px solid transparent;
-      border-right: 60px solid transparent;
-      border-bottom: 100px solid #000;
+    .glass-box p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
 
-    .circle {
-      width: 90px;
-      height: 90px;
-      background-color: #333;
-      border-radius: 50%;
+    .highlight {
+      font-weight: bold;
+      color: #000;
     }
 
-    .square {
-      width: 70px;
-      height: 70px;
-      background-color: #888;
+    .testimonials {
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      background: #fff;
+      border-left: 5px solid #333;
+      margin: 20px 0;
+      padding: 15px 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .testimonial p {
+      font-style: italic;
+      color: #333;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 30px;
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ff6347;
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -131,10 +134,9 @@
         justify-content: space-around;
         padding: 20px;
       }
-
       .main-content {
         margin-left: 0;
-        padding: 30px 20px;
+        padding: 20px;
       }
     }
   </style>
@@ -149,20 +151,31 @@
     <a href="#">Our Other Services</a>
   </div>
 
-  <div class="shapes">
-    <div class="shape triangle" style="top: 50px; left: 50px;"></div>
-    <div class="shape circle" style="top: 250px; right: 80px;"></div>
-    <div class="shape square" style="bottom: 100px; left: 150px;"></div>
-  </div>
-
   <div class="main-content">
     <div class="glass-box">
       <h1>About BoundLess Workers</h1>
-      <p><span class="highlight">BoundLess Workers</span> isn't just a company—it's a movement towards modern growth, freedom in work, and the limitless evolution of talent.</p>
-      <p>We provide premium, scalable, and customized services ranging from business support to digital solutions. Our name reflects our belief that <span class="highlight">there are no limits</span> to what a person can achieve with the right support.</p>
-      <p>Started with a dream and built with dedication, we uphold values of <span class="highlight">transparency</span>, <span class="highlight">passion</span>, and <span class="highlight">partnership</span>.</p>
-      <p class="italic">We’re not here to be ordinary. We’re here to make a difference, redefine success, and serve with power, pride, and purpose.</p>
+      <p><span class="highlight">BoundLess Workers</span> is a modern force in service solutions, dedicated to pushing the boundaries of quality and creativity.</p>
+      <p>We specialize in empowering businesses and individuals with innovative, scalable, and result-driven solutions. From consultancy to digital services, our mission is to create real impact.</p>
+      <p>What sets us apart? It's our <span class="highlight">people-first approach</span>, our focus on <span class="highlight">innovation</span>, and our commitment to <span class="highlight">excellence</span>.</p>
+      <p>We don’t just offer services—we build lasting relationships based on trust, transparency, and transformation. Our name itself, <span class="highlight">BoundLess</span>, signifies no limits, no boundaries, only progress.</p>
+      <p>We're redefining what service means in the 21st century. Everything we do is rooted in a deep understanding of our clients' needs and a passion to go beyond.</p>
+
+      <div class="testimonials">
+        <h2 style="margin-bottom: 10px;">Client Testimonials</h2>
+        <div class="testimonial">
+          <p>“BoundLess Workers transformed our digital outreach. Extremely professional and innovative team!”</p>
+          <span>- N. R. Kesharwani & Co. Chartered Accountants</span>
+        </div>
+        <div class="testimonial">
+          <p>“We got high-quality, customized support that helped our students succeed. 10/10!”</p>
+          <span>- Tuition Wala</span>
+        </div>
+      </div>
     </div>
+
+    <footer>
+      &copy; 2025 BoundLess Workers. All Rights Reserved. | <a href="contact.html">Contact Us</a>
+    </footer>
   </div>
 
 </body>
