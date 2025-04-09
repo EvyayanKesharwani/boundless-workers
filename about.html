@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - BoundLess Workers</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+    }
+
+    #about-page {
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to right, #e0e0e0 50%, #ffffff 50%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -200px;
+      width: 200px;
+      height: 100%;
+      background-color: #000000;
+      color: #ffffff;
+      padding: 20px;
+      transition: left 0.3s ease-in-out;
+      z-index: 10;
+    }
+
+    .sidebar:hover {
+      left: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 15px 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      color: #ff6347;
+    }
+
+    .about-content {
+      margin: auto;
+      padding: 40px;
+      max-width: 800px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .about-content h1 {
+      font-size: 48px;
+      color: #222;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-content p {
+      font-size: 20px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .italic {
+      font-style: italic;
+      color: #777;
+    }
+
+    .geometric-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-color: #f5f5f5;
+    }
+
+    .shape {
+      position: absolute;
+      opacity: 0.1;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #000;
+    }
+
+    .circle {
+      width: 80px;
+      height: 80px;
+      background-color: #333;
+      border-radius: 50%;
+    }
+
+    .square {
+      width: 60px;
+      height: 60px;
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div id="about-page">
+    <div class="geometric-background">
+      <div class="shape triangle" style="top: 50px; left: 30px;"></div>
+      <div class="shape circle" style="top: 200px; left: 150px;"></div>
+      <div class="shape square" style="top: 350px; left: 80px;"></div>
+      <div class="shape triangle" style="bottom: 100px; right: 50px;"></div>
+      <div class="shape circle" style="bottom: 200px; right: 120px;"></div>
+      <div class="shape square" style="bottom: 50px; right: 200px;"></div>
+    </div>
+    <div class="sidebar">
+      <h2>Services</h2>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="#payment">Payment Methods</a>
+      <a href="#services">Our Other Services</a>
+    </div>
+    <div class="about-content">
+      <h1>Who We Are</h1>
+      <p><span class="highlight">BoundLess Workers</span> is more than just a name—it's a vision of a world where services meet excellence, and people grow together without limits.</p>
+      <p class="italic">We are committed to building a future where work is dignified, innovation is natural, and growth is infinite.</p>
+      <p>Founded with passion and a dream, BoundLess Workers believes in <span class="highlight">integrity, dedication</span>, and the power of collective effort to reshape industries.</p>
+    </div>
+  </div>
+</body>
+</html>
