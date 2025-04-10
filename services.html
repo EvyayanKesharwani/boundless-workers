@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Other Services - BoundLess Workers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffffff 50%, #e0e0e0 50%);
+      color: #222;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 25px;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background-color: #111;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff6347;
+    }
+
+    .services-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .services-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .services-section p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover {
+      background-color: #444;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .service-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>BoundLess Workers</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="services.html">Other Services</a>
+  </nav>
+
+  <section class="services-section">
+    <h1>Explore Our Other Services</h1>
+    <p>We don't just build websites – we build solutions that move your business forward.</p>
+
+    <div class="service-cards">
+
+      <div class="card">
+        <h3>Custom Business Tools</h3>
+        <p>We design unique systems like CRMs, scheduling platforms, and more for your business needs.</p>
+      </div>
+
+      <div class="card">
+        <h3>Marketing & Branding</h3>
+        <p>Boost your reach with modern branding, logo design, social media strategy, and digital ads.</p>
+      </div>
+
+      <div class="card">
+        <h3>Microgreens E-Commerce Website</h3>
+        <p>Launching soon! Our health-focused microgreens shop, powered by a sleek e-commerce platform.</p>
+        <a href="https://boundlessworkers.com/microgreens" target="_blank">Visit Site</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 BoundLess Workers. Built for the limitless.
+  </footer>
+
+</body>
+</html>
