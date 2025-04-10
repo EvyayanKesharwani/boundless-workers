@@ -1,149 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BoundLess Workers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoundLess Workers - Home</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-    }
-
     body {
-      background: linear-gradient(135deg, #d3d3d3, #ffffff);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffffff 50%, #e0e0e0 50%);
+      overflow-x: hidden;
     }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -220px;
-      width: 220px;
-      height: 100%;
+    header {
       background-color: #000;
-      color: white;
-      padding: 20px;
-      transition: left 0.3s ease-in-out;
-      z-index: 10;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     }
-
-    .sidebar:hover {
-      left: 0;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background-color: #111;
+      padding: 15px 0;
+      font-size: 1.1rem;
     }
-
-    .sidebar h2 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 15px 0;
-      color: white;
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
-
-    .sidebar a:hover {
+    nav a:hover {
       color: #ff6347;
     }
-
-    .main-content {
+    .hero-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 90vh;
-      padding: 30px;
+      padding: 80px 20px;
       text-align: center;
+      background: linear-gradient(to bottom right, #fafafa, #dcdcdc);
     }
-
-    .main-content h1 {
-      font-size: 60px;
+    .hero-section h1 {
+      font-size: 3.5rem;
       color: #000;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
     }
-
-    .main-content p {
-      font-size: 22px;
-      font-style: italic;
+    .hero-section p {
+      margin-top: 20px;
+      font-size: 1.2rem;
       color: #444;
-      margin-bottom: 40px;
+      max-width: 600px;
     }
-
-    .cta-btn {
-      padding: 12px 30px;
-      font-size: 18px;
-      color: white;
-      background-color: #000;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    .tagline {
+      font-style: italic;
+      font-size: 1.3rem;
+      margin-top: 25px;
+      color: #666;
     }
-
-    .cta-btn:hover {
-      background-color: #444;
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 30px;
     }
-
-    footer {
+    .feature {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      width: 300px;
+      transition: transform 0.3s ease;
       text-align: center;
-      padding: 20px;
+    }
+    .feature:hover {
+      transform: translateY(-10px);
+    }
+    .feature h3 {
+      font-size: 1.5rem;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+    footer {
       background-color: #000;
       color: #fff;
+      text-align: center;
+      padding: 20px;
       font-size: 14px;
+      margin-top: 60px;
     }
-
-    footer a {
-      color: #ff6347;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Navigate</h2>
+
+  <header>BoundLess Workers</header>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact Us</a>
-    <a href="#payment">Payment Methods</a>
-    <a href="#services">Our Other Services</a>
-  </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="services.html">Other Services</a>
+  </nav>
 
-  <div class="main-content">
-    <h1>BoundLess Workers</h1>
-    <p>“Rooted in strength. Growing without limits.”</p>
-    <button class="cta-btn" onclick="window.location.href='about.html'">Learn More About Us</button>
-  </div>
+  <section class="hero-section">
+    <h1>Empowering Growth, One Click at a Time</h1>
+    <p>We craft powerful websites and business tools that help you grow fast, work smart, and shine bright in the digital world.</p>
+    <p class="tagline">"Rooted in strength. Growing without limits."</p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Custom Websites</h3>
+      <p>We build fast, responsive, and modern websites tailored for your brand.</p>
+    </div>
+    <div class="feature">
+      <h3>Business Tools</h3>
+      <p>Catalogs, e-commerce stores, payment methods – we’ve got it all covered.</p>
+    </div>
+    <div class="feature">
+      <h3>Affordable Pricing</h3>
+      <p>Top-notch services starting from just ₹5,000. No hidden fees.</p>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 BoundLess Workers. All Rights Reserved. | 
-    <a href="contact.html">Contact</a> | 
-    <a href="about.html">About</a> |
-    <a href="prices.html">Prices</a>
+    &copy; 2025 BoundLess Workers. Built with dedication and a spark of genius.
   </footer>
+
 </body>
 </html>
