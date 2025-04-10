@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - BoundLess Workers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f0f0, #ffffff);
+      color: #222;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 25px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff6347;
+    }
+
+    .pricing-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      width: 300px;
+      transition: transform 0.3s ease;
+      border-top: 5px solid #000;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .card ul {
+      list-style: none;
+      text-align: left;
+      padding: 0;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        font-size: 1.8rem;
+      }
+
+      .pricing-section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>BoundLess Workers - Pricing</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="services.html">Other Services</a>
+  </nav>
+
+  <section class="pricing-section">
+    <h2>Simple. Transparent. Affordable.</h2>
+    <p>Choose the right website service for your needs. No hidden charges. Just powerful websites at affordable rates.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Catalog Website</h3>
+        <p>Perfect for portfolios, company profiles & service listings.</p>
+        <div class="price">₹5,000</div>
+        <ul>
+          <li>Up to 5 Pages</li>
+          <li>Modern Design</li>
+          <li>Responsive on All Devices</li>
+          <li>Fast Loading</li>
+          <li>Basic Contact Form</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>E-Commerce Website</h3>
+        <p>Great for online stores, product listings & digital sales.</p>
+        <div class="price">₹8,000</div>
+        <ul>
+          <li>Product Pages + Cart</li>
+          <li>Payment Integration Ready</li>
+          <li>Fully Responsive Design</li>
+          <li>Order Management</li>
+          <li>SEO Optimized</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 BoundLess Workers. Designed for excellence. Coded with 🔥.
+  </footer>
+
+</body>
+</html>
