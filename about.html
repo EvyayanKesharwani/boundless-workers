@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - BoundLess Workers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,171 +11,155 @@
       box-sizing: border-box;
     }
 
-    body, html {
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f5f5f5, #ffffff);
-      scroll-behavior: smooth;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #eeeeee, #ffffff);
+      color: #222;
     }
 
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100%;
-      background: #000;
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      z-index: 10;
-    }
-
-    .sidebar h2 {
+    header {
+      background-color: #000;
       color: #fff;
-      font-size: 24px;
-      margin-bottom: 40px;
+      padding: 20px 40px;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .sidebar a {
-      color: #ccc;
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-size: 18px;
-      margin: 15px 0;
-      transition: 0.3s ease;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
 
-    .sidebar a:hover {
+    nav a:hover {
       color: #ff6347;
     }
 
-    .main-content {
-      margin-left: 240px;
-      padding: 60px 40px 20px 40px;
+    .about-section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
     }
 
-    .glass-box {
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      backdrop-filter: blur(10px);
-      animation: fadeIn 1.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    .glass-box h1 {
-      font-size: 48px;
-      color: #222;
+    .about-section h1 {
+      font-size: 3rem;
       margin-bottom: 20px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .glass-box p {
-      font-size: 18px;
+    .about-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
       color: #444;
-      line-height: 1.7;
-      margin-bottom: 15px;
     }
 
     .highlight {
-      font-weight: bold;
       color: #000;
-    }
-
-    .testimonials {
-      margin-top: 40px;
-    }
-
-    .testimonial {
-      background: #fff;
-      border-left: 5px solid #333;
-      margin: 20px 0;
-      padding: 15px 25px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .testimonial p {
-      font-style: italic;
-      color: #333;
-    }
-
-    .testimonial span {
-      display: block;
-      margin-top: 10px;
       font-weight: 600;
     }
 
-    footer {
-      margin-top: 50px;
-      padding: 30px;
-      text-align: center;
-      background-color: #000;
-      color: #fff;
-      font-size: 14px;
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
     }
 
-    footer a {
-      color: #ff6347;
-      text-decoration: none;
+    .value-box {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .value-box:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 50px;
     }
 
     @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 20px;
+      .about-section h1 {
+        font-size: 2.2rem;
       }
-      .main-content {
-        margin-left: 0;
-        padding: 20px;
+
+      .about-section p {
+        font-size: 1rem;
+      }
+
+      .value-box {
+        width: 90%;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="sidebar">
-    <h2>Navigate</h2>
+  <header>
+    <h1>About Us - BoundLess Workers</h1>
+  </header>
+
+  <nav>
     <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
     <a href="contact.html">Contact Us</a>
-    <a href="#">Payment Methods</a>
-    <a href="#">Our Other Services</a>
-  </div>
+    <a href="payment.html">Payment Methods</a>
+    <a href="services.html">Other Services</a>
+  </nav>
 
-  <div class="main-content">
-    <div class="glass-box">
-      <h1>About BoundLess Workers</h1>
-      <p><span class="highlight">BoundLess Workers</span> is a modern force in service solutions, dedicated to pushing the boundaries of quality and creativity.</p>
-      <p>We specialize in empowering businesses and individuals with innovative, scalable, and result-driven solutions. From consultancy to digital services, our mission is to create real impact.</p>
-      <p>What sets us apart? It's our <span class="highlight">people-first approach</span>, our focus on <span class="highlight">innovation</span>, and our commitment to <span class="highlight">excellence</span>.</p>
-      <p>We don’t just offer services—we build lasting relationships based on trust, transparency, and transformation. Our name itself, <span class="highlight">BoundLess</span>, signifies no limits, no boundaries, only progress.</p>
-      <p>We're redefining what service means in the 21st century. Everything we do is rooted in a deep understanding of our clients' needs and a passion to go beyond.</p>
+  <section class="about-section">
+    <h1>Driven by Passion. Built for the Future.</h1>
+    <p><span class="highlight">BoundLess Workers</span> isn't just a company — it's a revolution in how services are offered, experienced, and evolved.</p>
+    <p>We are a dynamic platform committed to delivering quality, affordability, and trust. Our team brings passion, skill, and innovation to every corner of what we do.</p>
+    <p>Whether it’s providing <span class="highlight">affordable tuitions</span>, <span class="highlight">business accounting expertise</span>, or <span class="highlight">custom digital services</span> — we deliver with precision and integrity.</p>
 
-      <div class="testimonials">
-        <h2 style="margin-bottom: 10px;">Client Testimonials</h2>
-        <div class="testimonial">
-          <p>“BoundLess Workers transformed our digital outreach. Extremely professional and innovative team!”</p>
-          <span>- N. R. Kesharwani & Co. Chartered Accountants</span>
-        </div>
-        <div class="testimonial">
-          <p>“We got high-quality, customized support that helped our students succeed. 10/10!”</p>
-          <span>- Tuition Wala</span>
-        </div>
+    <div class="values">
+      <div class="value-box">
+        <h3>🚀 Our Mission</h3>
+        <p>Empower individuals and businesses by delivering reliable, effective, and scalable services with complete transparency.</p>
+      </div>
+      <div class="value-box">
+        <h3>💡 Our Vision</h3>
+        <p>To build a community-driven platform where talent meets opportunity, and clients grow beyond limits.</p>
+      </div>
+      <div class="value-box">
+        <h3>🏆 What Makes Us Unique</h3>
+        <p>We mix modern tech with human values. Everything is built with purpose, executed with care, and backed by support.</p>
       </div>
     </div>
 
-    <footer>
-      &copy; 2025 BoundLess Workers. All Rights Reserved. | <a href="contact.html">Contact Us</a>
-    </footer>
-  </div>
+    <p>With support from <strong>N. R. Kesharwani & Co. Chartered Accountants</strong> and our collaboration with <strong>Tuition Wala</strong>, we are more than a business — we're a legacy in the making.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 BoundLess Workers. All rights reserved. | Designed with ❤️ by BoundLess Team
+  </footer>
 
 </body>
 </html>
