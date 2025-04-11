@@ -1,177 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us & Our Services | Boundless Workers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us & Our Services - Boundless Workers</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      background: #fff;
-      color: #333;
-      line-height: 1.6;
+    body, html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0e0e0 50%, #ffffff 50%);
+      color: #111;
     }
 
-    header {
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      padding: 20px 30px;
-      color: #fff;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-    }
-
-    nav {
-      background: #111;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00eaff;
-    }
-
-    section {
+    .container {
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
+      position: relative;
     }
 
-    .about-section, .services-section {
+    .section {
       margin-bottom: 60px;
+      animation: fadeInUp 1.2s ease-in-out;
     }
 
-    .about-section h2, .services-section h2 {
-      font-size: 36px;
+    h1, h2 {
+      text-align: center;
       margin-bottom: 20px;
-      color: #1e3c72;
-      text-align: center;
+      color: #000;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
     }
 
-    .about-section p, .services-section p {
+    p {
+      text-align: center;
       font-size: 18px;
-      max-width: 900px;
-      margin: 0 auto 30px auto;
-      text-align: center;
-      color: #555;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 15px auto;
     }
 
-    .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .service-box {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      flex: 1 1 300px;
-      max-width: 350px;
-      text-align: center;
-    }
-
-    .service-box h3 {
-      margin-bottom: 10px;
-      color: #1e3c72;
-      font-size: 22px;
-    }
-
-    .service-box p {
-      color: #666;
-      font-size: 16px;
-    }
-
-    .service-box a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #007BFF;
-      text-decoration: none;
+    .highlight {
       font-weight: bold;
+      color: #333;
+    }
+
+    .italic {
+      font-style: italic;
+      color: #777;
+    }
+
+    .geometric-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      opacity: 0.1;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 80px solid #000;
+    }
+
+    .circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #555;
+    }
+
+    .square {
+      width: 60px;
+      height: 60px;
+      background: #777;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 20px 0;
+    }
+
+    .service-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
     }
 
     footer {
-      background: #1e3c72;
-      color: #fff;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+      font-size: 14px;
     }
 
-    @media(max-width: 768px) {
-      .about-section h2, .services-section h2 {
-        font-size: 28px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      .about-section p, .services-section p {
-        font-size: 16px;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>About Us & Our Other Services</h1>
-  </header>
+  <div class="geometric-bg">
+    <div class="shape triangle" style="top: 50px; left: 30px;"></div>
+    <div class="shape circle" style="top: 200px; right: 100px;"></div>
+    <div class="shape square" style="bottom: 100px; left: 150px;"></div>
+    <div class="shape triangle" style="bottom: 50px; right: 50px;"></div>
+  </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="prices.html">Pricing</a>
-    <a href="services.html">Other Services</a>
-  </nav>
+  <div class="container">
+    <div class="section">
+      <h1>About Boundless Workers</h1>
+      <p><span class="highlight">Boundless Workers</span> is more than just a name—it's a vision. We strive to redefine the way people interact with services, building a community powered by trust, innovation, and limitless potential.</p>
+      <p class="italic">Our mission is to empower clients with top-notch digital solutions and services, making their journey toward success smooth and efficient.</p>
+      <p>With years of expertise and a team dedicated to <span class="highlight">excellence, creativity, and consistency</span>, we aim to stand out in the digital space and create value that lasts forever.</p>
+      <p>We do not just work for you, we work with you — because your growth is our priority.</p>
+    </div>
 
-  <section class="about-section">
-    <h2>Who Are We?</h2>
-    <p>Boundless Workers is a passionate team of innovators, designers, developers, and entrepreneurs based in Nagpur. We focus on delivering world-class digital solutions including stunning websites, seamless user experiences, and strong branding for businesses of all types and sizes.</p>
-    <p>What makes us different is our commitment to creativity, affordability, and top-notch quality. We work tirelessly to ensure our clients receive not just what they expect—but more than they imagined. With a rapidly growing portfolio and loyal clients, we are confidently paving the way into the future of tech services in India.</p>
-    <p>Started by the Kesharwani legacy, we also provide highly reputed offline services through our sister ventures — Tuition Wala and N. R. Kesharwani & Co. Chartered Accountants.</p>
-  </section>
-
-  <section class="services-section">
-    <h2>🌟 Our Other Services</h2>
-    <p>Besides our digital empire, here’s how we’re creating real-world impact every single day:</p>
-    <div class="services-container">
-      <div class="service-box">
-        <h3>📊 N. R. Kesharwani & Co.</h3>
-        <p>Registered Chartered Accountants providing professional audit, taxation, and financial advisory services to individuals and businesses.</p>
-      </div>
-
-      <div class="service-box">
-        <h3>🎓 Tuition Wala</h3>
-        <p>One-on-one coaching and group classes led by expert tutors for school students, competitive exams, and skill development.</p>
-      </div>
-
-      <div class="service-box">
-        <h3>🌱 Microgreens Supply</h3>
-        <p>Supplying nutrient-rich microgreens to restaurants, cafés, and health brands across Nagpur. Fresh, local, and packed with health!</p>
-        <a href="microgreens.html">View Products</a>
+    <div class="section">
+      <h2>Our Other Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Website Development</h3>
+          <p>We craft modern, responsive websites for catalog and e-commerce needs with professional aesthetics and seamless UX.</p>
+        </div>
+        <div class="service-card">
+          <h3>Call Center Solutions</h3>
+          <p>End-to-end support and setup for customer service and telemarketing operations with top-grade infrastructure.</p>
+        </div>
+        <div class="service-card">
+          <h3>Microgreens Business</h3>
+          <p>Partner with us in our fresh and growing venture into healthy microgreens, delivered to cafes, restaurants, and homes.</p>
+        </div>
+        <div class="service-card">
+          <h3>Brand Consulting</h3>
+          <p>We guide startups and small businesses in building memorable and scalable brand identities that capture attention.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Boundless Workers. All rights reserved.</p>
+    &copy; 2025 Boundless Workers. All Rights Reserved.
   </footer>
 </body>
 </html>
