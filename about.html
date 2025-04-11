@@ -1,165 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - BoundLess Workers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us & Our Services | Boundless Workers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #eeeeee, #ffffff);
-      color: #222;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #000;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      padding: 20px 30px;
       color: #fff;
-      padding: 20px 40px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.5em;
     }
 
     nav {
-      background-color: #111;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
+      background: #111;
+      padding: 10px;
+      text-align: center;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 15px;
+      font-weight: 500;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ff6347;
+      color: #00eaff;
     }
 
-    .about-section {
-      padding: 50px 20px;
-      max-width: 1100px;
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: auto;
+    }
+
+    .about-section, .services-section {
+      margin-bottom: 60px;
+    }
+
+    .about-section h2, .services-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #1e3c72;
       text-align: center;
     }
 
-    .about-section h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    .about-section p, .services-section p {
+      font-size: 18px;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      color: #555;
     }
 
-    .about-section p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: #444;
-    }
-
-    .highlight {
-      color: #000;
-      font-weight: 600;
-    }
-
-    .values {
+    .services-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
-      margin: 40px 0;
+      margin-top: 40px;
     }
 
-    .value-box {
-      background: #f9f9f9;
-      border-radius: 10px;
+    .service-box {
+      background: #ffffff;
       padding: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 300px;
-      transition: transform 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px;
+      max-width: 350px;
+      text-align: center;
     }
 
-    .value-box:hover {
-      transform: translateY(-10px);
+    .service-box h3 {
+      margin-bottom: 10px;
+      color: #1e3c72;
+      font-size: 22px;
+    }
+
+    .service-box p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    .service-box a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
-      background-color: #000;
+      background: #1e3c72;
       color: #fff;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 50px;
+      padding: 30px 20px;
+      margin-top: 60px;
     }
 
-    @media (max-width: 768px) {
-      .about-section h1 {
-        font-size: 2.2rem;
+    @media(max-width: 768px) {
+      .about-section h2, .services-section h2 {
+        font-size: 28px;
       }
-
-      .about-section p {
-        font-size: 1rem;
-      }
-
-      .value-box {
-        width: 90%;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 15px;
+      .about-section p, .services-section p {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>About Us - BoundLess Workers</h1>
+    <h1>About Us & Our Other Services</h1>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="prices.html">Prices</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="payment.html">Payment Methods</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="prices.html">Pricing</a>
     <a href="services.html">Other Services</a>
   </nav>
 
   <section class="about-section">
-    <h1>Driven by Passion. Built for the Future.</h1>
-    <p><span class="highlight">BoundLess Workers</span> isn't just a company — it's a revolution in how services are offered, experienced, and evolved.</p>
-    <p>We are a dynamic platform committed to delivering quality, affordability, and trust. Our team brings passion, skill, and innovation to every corner of what we do.</p>
-    <p>Whether it’s providing <span class="highlight">affordable tuitions</span>, <span class="highlight">business accounting expertise</span>, or <span class="highlight">custom digital services</span> — we deliver with precision and integrity.</p>
+    <h2>Who Are We?</h2>
+    <p>Boundless Workers is a passionate team of innovators, designers, developers, and entrepreneurs based in Nagpur. We focus on delivering world-class digital solutions including stunning websites, seamless user experiences, and strong branding for businesses of all types and sizes.</p>
+    <p>What makes us different is our commitment to creativity, affordability, and top-notch quality. We work tirelessly to ensure our clients receive not just what they expect—but more than they imagined. With a rapidly growing portfolio and loyal clients, we are confidently paving the way into the future of tech services in India.</p>
+    <p>Started by the Kesharwani legacy, we also provide highly reputed offline services through our sister ventures — Tuition Wala and N. R. Kesharwani & Co. Chartered Accountants.</p>
+  </section>
 
-    <div class="values">
-      <div class="value-box">
-        <h3>🚀 Our Mission</h3>
-        <p>Empower individuals and businesses by delivering reliable, effective, and scalable services with complete transparency.</p>
+  <section class="services-section">
+    <h2>🌟 Our Other Services</h2>
+    <p>Besides our digital empire, here’s how we’re creating real-world impact every single day:</p>
+    <div class="services-container">
+      <div class="service-box">
+        <h3>📊 N. R. Kesharwani & Co.</h3>
+        <p>Registered Chartered Accountants providing professional audit, taxation, and financial advisory services to individuals and businesses.</p>
       </div>
-      <div class="value-box">
-        <h3>💡 Our Vision</h3>
-        <p>To build a community-driven platform where talent meets opportunity, and clients grow beyond limits.</p>
+
+      <div class="service-box">
+        <h3>🎓 Tuition Wala</h3>
+        <p>One-on-one coaching and group classes led by expert tutors for school students, competitive exams, and skill development.</p>
       </div>
-      <div class="value-box">
-        <h3>🏆 What Makes Us Unique</h3>
-        <p>We mix modern tech with human values. Everything is built with purpose, executed with care, and backed by support.</p>
+
+      <div class="service-box">
+        <h3>🌱 Microgreens Supply</h3>
+        <p>Supplying nutrient-rich microgreens to restaurants, cafés, and health brands across Nagpur. Fresh, local, and packed with health!</p>
+        <a href="microgreens.html">View Products</a>
       </div>
     </div>
-
-    <p>With support from <strong>N. R. Kesharwani & Co. Chartered Accountants</strong> and our collaboration with <strong>Tuition Wala</strong>, we are more than a business — we're a legacy in the making.</p>
   </section>
 
   <footer>
-    &copy; 2025 BoundLess Workers. All rights reserved. | Designed with ❤️ by BoundLess Team
+    <p>&copy; 2025 Boundless Workers. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
