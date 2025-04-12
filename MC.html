@@ -2,29 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Management Consultancy | N. R. Kesharwani & Co.</title>
+  <title>Service Details | N. R. Kesharwani & Co.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9fdfd;
+      background: #f4fdf8;
       color: #333;
     }
     header {
-      background: linear-gradient(to right, #0d47a1, #1976d2);
+      background: linear-gradient(to right, #004d40, #009688);
       color: white;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     header h1 {
       margin: 0;
       font-size: 28px;
     }
     nav {
-      background-color: #0a305f;
+      background-color: #00332e;
       text-align: center;
       padding: 10px 0;
     }
@@ -43,7 +43,7 @@
       padding: 0 20px;
     }
     h2 {
-      color: #0d47a1;
+      color: #00695c;
       margin-top: 40px;
     }
     p {
@@ -57,7 +57,7 @@
       margin: 40px auto 0;
       padding: 12px 30px;
       font-size: 18px;
-      background-color: #1565c0;
+      background-color: #00796b;
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -65,10 +65,10 @@
       transition: background-color 0.3s ease;
     }
     .cta-button:hover {
-      background-color: #0d47a1;
+      background-color: #004d40;
     }
     footer {
-      background-color: #0d47a1;
+      background-color: #004d40;
       color: white;
       text-align: center;
       padding: 15px;
@@ -80,7 +80,7 @@
 
   <header>
     <h1>N. R. Kesharwani & Co.</h1>
-    <p>Management Consultancy</p>
+    <p id="service-title"></p>
   </header>
 
   <nav>
@@ -89,32 +89,40 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section>
-    <h2>What is Management Consultancy?</h2>
-    <p>
-      Management Consultancy involves offering expert advice to improve an organization's efficiency, structure, operations, and profitability. Our service encompasses strategic planning, performance improvement, financial analysis, human resource planning, and organizational development.
-    </p>
-
-    <h2>How We Provide Management Consultancy</h2>
-    <p>
-      We begin by understanding your current business model, goals, and challenges. Our consultants then analyze existing processes and recommend practical, data-driven solutions to boost performance. Whether it's workflow optimization or leadership development, we provide tailored strategies aligned with your objectives.
-    </p>
-
-    <h2>Benefits to Take Management Consultancy from Us</h2>
-    <p>
-      ✅ Strategic business planning and growth-oriented insights<br>
-      ✅ Improved operational efficiency and cost-effectiveness<br>
-      ✅ Objective analysis from experienced professionals<br>
-      ✅ Enhanced team coordination and accountability<br>
-      ✅ Custom solutions that align with your long-term vision
-    </p>
-
-    <a href="book-us.html" class="cta-button">Book Us Now!</a>
+  <section id="service-content">
+    <!-- Dynamic content will load here -->
   </section>
 
   <footer>
     &copy; 2025 N. R. Kesharwani & Co. | Chartered Accountants
   </footer>
+
+  <script>
+    const serviceData = {
+      "Management Consultancy": {
+        title: "Management Consultancy",
+        what: `Management consultancy is a professional service that helps organizations improve performance through analysis of existing problems and development of strategic plans. These services span across business process improvement, operations, organizational strategies, financial planning, and more.`,
+        how: `We start by conducting an in-depth analysis of your business operations and goals. Based on our findings, we design and implement strategic solutions tailored to enhance efficiency, productivity, and overall growth. Our team provides continued support to ensure smooth transformation and measurable results.`,
+        benefits: `✅ Expert analysis and insights into business operations<br>✅ Tailored solutions that align with business goals<br>✅ Efficient resource utilization and cost control<br>✅ Competitive advantage and long-term growth<br>✅ Continuous guidance and monitoring`
+      },
+      // Add more services here if needed
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service') || 'Management Consultancy';
+    const data = serviceData[service];
+
+    document.getElementById("service-title").textContent = data.title;
+    document.getElementById("service-content").innerHTML = `
+      <h2>What is ${data.title}?</h2>
+      <p>${data.what}</p>
+      <h2>How We Provide ${data.title}</h2>
+      <p>${data.how}</p>
+      <h2>Benefits to Take Service from Us in ${data.title}</h2>
+      <p>${data.benefits}</p>
+      <a href="book-us.html" class="cta-button">Book Us Now!</a>
+    `;
+  </script>
 
 </body>
 </html>
