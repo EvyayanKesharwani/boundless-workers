@@ -1,153 +1,957 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BoundLess Workers - Home</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffffff 50%, #e0e0e0 50%);
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 30px;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      background-color: #111;
-      padding: 15px 0;
-      font-size: 1.1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ff6347;
-    }
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(to bottom right, #fafafa, #dcdcdc);
-    }
-    .hero-section h1 {
-      font-size: 3.5rem;
-      color: #000;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-    }
-    .hero-section p {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: #444;
-      max-width: 600px;
-    }
-    .tagline {
-      font-style: italic;
-      font-size: 1.3rem;
-      margin-top: 25px;
-      color: #666;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 60px 20px;
-      gap: 30px;
-    }
-    .feature {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-      width: 300px;
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-    .feature:hover {
-      transform: translateY(-10px);
-    }
-    .feature h3 {
-      font-size: 1.5rem;
-      color: #000;
-      margin-bottom: 10px;
-    }
-    .feature p {
-      font-size: 1rem;
-      color: #555;
-    }
-    footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 60px;
-    }
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2.5rem;
-      }
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boungless | Commercial Space Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c9a96e;
+            --accent: #8b7355;
+            --light: #f8f8f8;
+            --dark: #2c2c2c;
+            --text: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 20px auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255,255,255,0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 5px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 200px 0 150px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+        
+        .hero-title span {
+            color: var(--secondary);
+            display: block;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .about-img {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-img::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border: 10px solid var(--secondary);
+            top: -30px;
+            left: -30px;
+            z-index: -1;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 10px;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* Projects Section */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: transparent;
+            border: 1px solid #ddd;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-overlay h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .project-overlay p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 80px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-img::before {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 3.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">BOUNGLESS</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header>BoundLess Workers</header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Welcome to our studio</p>
+                <h1 class="hero-title">BOUNGLESS<br><span>Commercial Space Design</span></h1>
+                <p class="hero-description">We transform commercial spaces into inspiring environments that enhance productivity, reflect brand identity, and create lasting impressions.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View Our Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <nav>
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="prices.html">Prices</a> |
-    <a href="payment.html">Payment Method & Renewal</a> |
-    <a href="services.html">Other Services</a> |
-  </nav>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- Placeholder for image -->
+                    <div style="width:100%; height:500px; background-color:#e0e0e0; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-building" style="font-size: 100px; color: #aaa;"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Creating Inspiring Commercial Environments</h2>
+                    <p>At Boungless, we specialize in transforming commercial spaces into functional, aesthetically pleasing environments that reflect your brand's identity and values. With over 15 years of experience, our team of designers and architects brings creativity and expertise to every project.</p>
+                    <p>We believe that well-designed spaces can enhance productivity, encourage collaboration, and create memorable experiences for both employees and clients.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Innovative Design</h4>
+                                <p>Creative solutions tailored to your unique business needs and brand identity.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Space Optimization</h4>
+                                <p>Maximizing functionality while maintaining aesthetic appeal in every square foot.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Quality Materials</h4>
+                                <p>Using premium, sustainable materials that stand the test of time.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Timely Delivery</h4>
+                                <p>Completing projects on schedule without compromising on quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="hero-section">
-    <h1>Empowering Growth, One Click at a Time</h1>
-    <p>We craft powerful websites and business tools that help you grow fast, work smart, and shine bright in the digital world.</p>
-    <p class="tagline">"Rooted in strength. Growing without limits."</p>
-  </section>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>Comprehensive interior design solutions for offices, retail spaces, and commercial establishments.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Space Planning</h3>
+                    <p>Strategic layout designs that optimize workflow, functionality, and employee well-being.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Brand Integration</h3>
+                    <p>Seamlessly incorporating your brand identity into the physical space for cohesive branding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="features">
-    <div class="feature">
-      <h3>Custom Websites</h3>
-      <p>We build fast, responsive, and modern websites tailored for your brand.</p>
-    </div>
-    <div class="feature">
-      <h3>Business Tools</h3>
-      <p>Catalogs, e-commerce stores, payment methods – we’ve got it all covered.</p>
-    </div>
-    <div class="feature">
-      <h3>Affordable Pricing</h3>
-      <p>Top-notch services starting from just ₹5,000. No hidden fees.</p>
-    </div>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="office">Office</button>
+                <button class="filter-btn" data-filter="retail">Retail</button>
+                <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="office">
+                    <div class="project-img" style="background-color: #8b7355;"></div>
+                    <div class="project-overlay">
+                        <h3>TechHub Offices</h3>
+                        <p>Modern workspace design for a growing tech company</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="retail">
+                    <div class="project-img" style="background-color: #c9a96e;"></div>
+                    <div class="project-overlay">
+                        <h3>Luxe Boutique</h3>
+                        <p>High-end retail space with custom fixtures</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="hospitality">
+                    <div class="project-img" style="background-color: #1a1a1a;"></div>
+                    <div class="project-overlay">
+                        <h3>Urban Cafe</h3>
+                        <p>Cozy yet contemporary cafe design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 BoundLess Workers. Built with dedication and a spark of genius.
-  </footer>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Create Something Amazing Together</h3>
+                    <p>Ready to transform your commercial space? Contact us today to discuss your project and discover how we can bring your vision to life.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Visit Our Studio</h4>
+                            <p>123 Design District, Creative City</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@boungless-design.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BOUNGLESS</h3>
+                    <p>Transforming commercial spaces into inspiring environments that reflect brand identity and enhance productivity.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 12px;"><a href="#home" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#about" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#services" style="color: rgba(255,255,255,0.7); text-decoration: none;">Services</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#projects" style="color: rgba(255,255,255,0.7); text-decoration: none;">Projects</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#contact" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);">Commercial Interior Design</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);">Space Planning</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);">Brand Integration</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);">Project Management</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 BOUNGLESS Commercial Space Design. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Project filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(button => button.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
