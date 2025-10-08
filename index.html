@@ -643,6 +643,17 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="nav-auth-btn" id="navAuthBtn">
+                    <i class="fas fa-user"></i> Sign In
+                    <span id="userName">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="user-dropdown" id="userDropdown">
+                    <a href="#"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="#"><i class="fas fa-cog"></i> Account Settings</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>   
             </nav>
         </div>
     </header>
@@ -953,5 +964,71 @@
             this.reset();
         });
     </script>
+    <!-- AUTHENTICATION MODAL -->
+<div class="auth-modal" id="authModal">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h3>Boungless Account</h3>
+            <button class="auth-close" id="authClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Sign In</button>
+            <button class="auth-tab" data-tab="register">Sign Up</button>
+        </div>
+        <div class="auth-content">
+            <!-- Login Form -->
+            <form class="auth-form active" id="loginForm">
+                <div class="auth-alert error" id="loginError">
+                    <i class="fas fa-exclamation-circle"></i> Invalid email or password
+                </div>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign In</button>
+                <div class="auth-footer">
+                    Don't have an account? <a id="showRegister">Sign Up</a>
+                </div>
+            </form>
+            
+            <!-- Register Form -->
+            <form class="auth-form" id="registerForm">
+                <div class="auth-alert error" id="registerError">
+                    <i class="fas fa-exclamation-circle"></i> Please fill all fields correctly
+                </div>
+                <div class="auth-alert success" id="registerSuccess">
+                    <i class="fas fa-check-circle"></i> Account created successfully!
+                </div>
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Create Account</button>
+                <div class="auth-footer">
+                    Already have an account? <a id="showLogin">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
